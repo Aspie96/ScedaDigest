@@ -87,7 +87,7 @@ void sceda_digest(unsigned char *output, const unsigned char *input, int length)
 	memcpy(buffer, input, length);
 	buffer[length] = length / 256;
 	buffer[length + 1] = length % 256;
-	for(i = length + 1; i < blockC * 16; i++) {
+	for(i = length + 2; i < blockC * 16; i++) {
 		buffer[i] = 170;
 	}
 	for(i = 0; i < blockC; i++) {
